@@ -2,6 +2,13 @@
 
 :root {
     font-size: 10px;
+    --heading-size: 32px;
+    --mainheading-style: bold;
+    --between-img-margins: 1em;
+    --marginbottom-sections: 1em;
+    --paragraph-fontsize: 18px;
+    --list-data-info-size: 12px;
+    --inside-profile-margins: 3em;
 }
 
 *,
@@ -18,7 +25,7 @@ body {
 }
 
 header {
-    margin-bottom: 1em;
+    margin-bottom: var(--marginbottom-sections);
 }
 
 main {
@@ -26,8 +33,11 @@ main {
 }
 
 .container {
-    
     position: relative;
+}
+
+.profile-image {
+   
 }
 
 .profile {
@@ -35,12 +45,12 @@ main {
     grid-template-columns: repeat(9, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
-      "sd sd sd hd   hd   hd   hr   hr   hr"
+      "sd sd sd hd   hd   hd   hd   hd   hd"
       "sd sd sd main main main main main main"
       "sd sd sd ft   ft   ft   ft   ft   ft";
   }
 
-  .profile-user-settings > h1 {
+  .profile-user-settings {
     grid-area: hd;
   }
   .profile-bio {
@@ -52,9 +62,28 @@ main {
   .profile-image {
     grid-area: sd;
   }
-  .profile-user-settings button {
-    grid-area: hr;
+
+  .profile-user-settings {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+    align-content: space-between;
   }
+
+  button {
+
+  }
+
+
+ 
+  h1 {
+    font-size: var(--heading-size);
+    font-style: var(--mainheading-style);
+  }
+
+  .profile-bio {
+    font-size: var(--paragraph-fontsize);
+  } 
 
 .profile-image > img {
     border-radius: 50%;
@@ -63,11 +92,14 @@ main {
 
 profile-stats {
    grid-area: main;
+   
 }
 
 .profile-stats > ul li {
     margin-right: 10%;
     float: right;
+    font-size: var(--list-data-info-size);
+    margin-top: var(--inside-profile-margins);
 }
 
 ul {
